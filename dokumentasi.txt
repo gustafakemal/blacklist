@@ -1,0 +1,97 @@
+*PORT: 5000
+
+*API :
+
+1. GET ALL DATA
+- url : localhost:5000/ktp
+- method : GET
+- response :
+{
+    "message": "clear",
+    "data": [
+        {
+            "NIK": "3602041211870001",
+            "NamaLengkap": "...",
+            "Tempat": "Surabaya",
+            "TanggalLahir": "1996-06-30T00:00:00.000Z",
+            "Blacklist": "Y"
+        },
+        {
+            "NIK": "3602041211870002",
+            "NamaLengkap": "...",
+            "Tempat": "Jakarta",
+            "TanggalLahir": null,
+            "Blacklist": "Y"
+        },
+        {
+            "NIK": "3602041211870003",
+            "NamaLengkap": "...",
+            "Tempat": "Tangerang",
+            "TanggalLahir": "1996-06-30T00:00:00.000Z",
+            "Blacklist": "N"
+        }
+    ]
+}
+
+
+2. GET DATA BY NIK
+- url : localhost:5000/ktp/3602041211870001
+- method : GET
+- response :
+{
+    "message": "clear",
+    "data": [
+        {
+            "NIK": "3602041211870001",
+            "NamaLengkap": "...",
+            "Tempat": "Jakarta",
+            "TanggalLahir": "1996-06-30T00:00:00.000Z",
+            "Blacklist": "Y"
+        }
+    ]
+}
+
+
+3. POST DATA
+- url : localhost:5000/ktp/post
+- method : POST
+- body : 
+{
+    "NIK" : "3602041211870004",
+    "Tempat": "Surabaya",
+    "NamaLengkap": "...",
+    "TanggalLahir": "1996-06-30"
+}
+- response :
+{
+    "message": "clear",
+    "data": "NIK 3602041211870004 has been created"
+}
+- response (blacklist) :
+{
+    "message": "blacklist",
+    "data": "Blacklist on NIK 3602041211870004"
+}
+
+
+4. UPDATE DATA
+- url : localhost:5000/ktp/update/3602041211870001
+- method : PUT
+- body :
+{
+    "Tempat": "Semarang"
+}
+- response : 
+{
+    "message": "clear",
+    "data": "NIK 3602041211870001 has been updated"
+}
+
+5. DELETE DATA
+- url : localhost:5000/ktp/delete/3602041211870004
+- method : DELETE
+- response :
+{
+    "message": "clear",
+    "data": "NIK 3602041211870001 has been deleted"
+}
