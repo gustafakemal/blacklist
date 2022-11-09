@@ -93,5 +93,5 @@
 - response :
 {
     "message": "clear",
-    "data": "NIK 3602041211870001 has been deleted"
+    "data": "NIK 3602041211870004 has been deleted"
 }
